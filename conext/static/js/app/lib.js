@@ -1,7 +1,5 @@
-define(['jquery'], function ($) {
-    return {
-        getBody: function () {
-            return $('body');
-        }
+define(['jquery','bootstrap'], function ($) {
+	debugger;
+    	alert("right");
     }
 });

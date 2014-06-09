@@ -6,7 +6,7 @@
 //except for 'app' ones, which are in a sibling
 //directory.
 requirejs.config({
-    baseUrl: 'js/lib',
+    baseUrl: '../static/js/lib',
     paths: {
         app: '../app'
     },
@@ -17,6 +17,9 @@ requirejs.config({
         },
         underscore: {
             exports: '_'
+        },
+        bootstrap: {
+            deps: ['jquery']
         }
     }
 });
