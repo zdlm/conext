@@ -5,6 +5,8 @@ from django.views.generic import TemplateView
 
 from django.contrib import admin
 
+from views import HomeView
+
 from tastypie.api import Api
 from qa.api import QAResource
 
@@ -14,6 +16,8 @@ v1_api.register(QAResource())
 
 urlpatterns = patterns("",
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
+    url(r'^home/$', HomeView.as_view(), name='myHome'),
+    url(r"^base/", TemplateView.as_view(template_name="base.html"), name="base"),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^account/", include("account.urls")),
     url(r"^api/", include(v1_api.urls)),

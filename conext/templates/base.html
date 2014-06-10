@@ -1,6 +1,6 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +9,11 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../static/image/favicon.ico">
 
-    <title>人月神话</title>
+    <title>{% block head_title_base %}{% endblock %}</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../static/css/blog.css" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "css/blog.css" %}" rel="stylesheet">
 
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
@@ -166,18 +164,39 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="../static/js/lib/require.js"></script>
+    <script type="text/javascript" src="{% static "js/lib/require.js" %}"></script>
     <script>
+        requirejs.config({
+          baseUrl: "{% static "js/lib" %}",
+          paths: {
+              app: "../app/",
+              jquery:"jquery",
+              underscore:"underscore"
+          },
+          shim: {
+              backbone: {
+                  deps: ['jquery', 'underscore'],
+                  exports: 'Backbone'
+              },
+              underscore: {
+                  exports: '_'
+              },
+              bootstrap: {
+                  deps: ['jquery']
+              }
+          }
+        });
+        {% block extra_script %}{% endblock %}
         //Load common code that includes config, then load the app
         //logic for this page. Do the require calls here instead of
         //a separate file so after a build there are only 2 HTTP
         //requests instead of three.
-        require(['../static/js/common'], function (common) {
+        //require(["{% static "js/common.js" %}"], function (common) {
             //js/common sets the baseUrl to be js/ so
             //can just ask for 'app/main1' here instead
             //of 'js/app/main1'
-            require(['app/main1']);
-        });
+            require(["app/main1"]);
+        //});
     </script>
     <!--<script src="../../dist/js/bootstrap.min.js"></script>
     <script src="../../assets/js/docs.min.js"></script>-->
