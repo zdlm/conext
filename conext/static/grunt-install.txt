@@ -1,0 +1,21 @@
+for mac
+=========================
+1. 文件 packeage.json, Gruntfile.js
+
+2. 安装
+ #安装node
+ brew install node
+  node -v
+  npm -v
+
+ #安装cli
+ npm install -g grunt-cli
+ npm install -g grunt
+  grunt --version
+
+
+ #安装package.json中依赖模块
+ npm install
+
+3. build
+ grunt default
