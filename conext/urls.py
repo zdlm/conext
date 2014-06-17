@@ -8,10 +8,11 @@ from django.contrib import admin
 from views import HomeView
 
 from tastypie.api import Api
-from qa.api import QAResource
+from qa.api import QAResource, AnswerResource
 
 v1_api = Api(api_name='v1')
 v1_api.register(QAResource())
+v1_api.register(AnswerResource())
 
 
 urlpatterns = patterns("",

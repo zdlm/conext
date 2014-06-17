@@ -25,3 +25,4 @@ class QA(models.Model):
     updated_by = models.CharField(max_length=200)#models.ForeignKey(User)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now_add=True)
+    is_deleted=models.BooleanField(default=False)#for question

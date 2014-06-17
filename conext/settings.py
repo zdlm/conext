@@ -195,3 +195,8 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
 AUTHENTICATION_BACKENDS = [
     "account.auth_backends.UsernameAuthenticationBackend",
 ]
+#Tastypie settings
+#https://django-tastypie.readthedocs.org/en/latest/settings.html
+API_LIMIT_PER_PAGE = 20
+TASTYPIE_FULL_DEBUG = True
+TASTYPIE_CANNED_ERROR = "connect wrong"
