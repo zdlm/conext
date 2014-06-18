@@ -1,4 +1,4 @@
-from tastypie.resources import ModelResource
+from tastypie.resources import ModelResource, ALL, ALL_WITH_RELATIONS
 from tastypie.authentication import BasicAuthentication
 from qa.models import QA
 
@@ -19,3 +19,18 @@ class AnswerResource(ModelResource):
 
     def get_object_list(self, request):
         return super(AnswerResource, self).get_object_list(request).filter(type="answer")
+
+class QuestionResource(ModelResource):
+    class Meta:
+        queryset = QA.objects.all()
+        resource_name = "question"
+        filtering = {
+            "content":ALL,
+        }
+        ordering = [
+            "date_updated",
+        ]
+        authentication = BasicAuthentication()
+
+    def get_object_list(self, request):
+        return super(QuestionResource, self).get_object_list(request).filter(type="question")
