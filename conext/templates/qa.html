@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block head_title_base %}问答{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div id = "qa-publish-container" class="qa-publish-container"></div>
+                </div>
+            </div>
+
+            <div class="qa-content-container"></div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">个人信息</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">热门公司</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">热门话题</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Panel title</h3>
+                </div>
+                <div class="panel-body">
+                    Panel content
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_script %}
+    require(["app/qa"]);
+{% endblock %}

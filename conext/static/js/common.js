@@ -20,6 +20,9 @@ requirejs.config({
         },
         bootstrap: {
             deps: ['jquery']
+        },
+        jquery.autosize:{
+            deps:['jquery']
         }
     }
 });

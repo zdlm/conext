@@ -12,6 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "css/blog.css" %}" rel="stylesheet">
+    <link href="{% static "css/site_new.css" %}" rel="stylesheet">
     {% block extra_css %}{% endblock %}
   </head>
   <body>
@@ -21,13 +22,13 @@
           <a class="blog-nav-item" data-value="home" href="/home">首页</a>
           <a class="blog-nav-item" data-value="qa" href="/qa">问答</a>
           <a class="blog-nav-item" data-value="complain" href="/complain">吐槽</a>
-          <a class="blog-nav-item" data-value="experience" href="experience">面经</a>
-          <a class="blog-nav-item" data-value="aboutus" href="aboutuss">关于我们</a>
+          <a class="blog-nav-item" data-value="experience" href="/experience">面经</a>
+          <a class="blog-nav-item" data-value="aboutus" href="/aboutuss">关于我们</a>
         </nav>
       </div>
     </div>
 
-    <div class="container">
+    <div class="container content-container">
       {% block content %}{% endblock %}
     </div><!-- /.container -->
 

@@ -1,0 +1,44 @@
+/*----------base start----------*/
+body{
+    background-color: #e5e5e5;
+}
+
+.content-container{
+    margin-top: 20px;
+}
+
+.fn-left{
+    float: left;
+}
+
+.fn-right{
+    float: right;
+}
+
+.fn-clear{
+    clear: both;
+}
+
+.fn-hide{
+    display: none;
+}
+/*----------base end----------*/
+
+
+/*----------publish start----------*/
+.publish-content{
+    padding:10px;
+	border: 1px #ddd solid;
+	width: 100%;
+    height: 42px;
+	box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    display: block;
+    resize: vertical;
+}
+
+.publish-operation{
+    margin-top: 15px;
+}
+/*----------publish end----------*/

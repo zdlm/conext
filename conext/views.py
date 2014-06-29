@@ -6,4 +6,7 @@ class HomeView(View):
     def get(self, *args, **kwargs):
         return render_to_response("home.html")
 
+class QaView(View):
+    def get(self, *args, **kwargs):
+        return render_to_response("qa.html")
     
