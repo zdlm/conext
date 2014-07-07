@@ -1,6 +1,7 @@
-define(['jquery','jquery.autosize','text!../../html/publish.html'],function ($,autosize,html) {
-    function publish(element) {
+define(['jquery','jquery.autosize','helper','text!../../html/publish.html'],function ($,autosize,helper,html) {
+    function publish(element,url) {
         this.element = $(element);
+        this.url = url;
         this.render();
         this._initEvents();
     }
@@ -12,10 +13,6 @@ define(['jquery','jquery.autosize','text!../../html/publish.html'],function ($,a
 
         render: function () {
             this.element.html(html);
-//            var self = this;
-//            require(['text!../../html/publish.html'],function(html){
-//                self.element.html(html);
-//            });
         },
 
         _toTyping:function(){
@@ -44,11 +41,21 @@ define(['jquery','jquery.autosize','text!../../html/publish.html'],function ($,a
 
         },
 
+        _submit:function(){
+            helper.api({
+                url:this.url,
+                type:"post",
+                done:function(){
+                    alert("success");
+                }});
+        },
+
         _initEvents:function(){
             $(".publish-content").bind("focus",this._toTyping);
             $(".publish-close").bind("click",this._close);
             $(".publish-content").bind("input",this._contentChange);
             $(".publish-content").bind("onpropertychange",this._contentChange);
+            $(".publish-ok").bind("click",$.proxy( this, "_submit" ));
         }
     };
 

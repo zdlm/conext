@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../static/image/favicon.ico">
     <title>{% block head_title_base %}{% endblock %}</title>
+    <script type="text/javascript" src="{% static "js/lib/nprogress.js" %}"></script>
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "css/blog.css" %}" rel="stylesheet">
@@ -44,13 +45,17 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="{% static "js/lib/require.js" %}"></script>
+
     <script>
+        NProgress.start();
         requirejs.config({
           baseUrl: "{% static "js/lib" %}",
           paths: {
               app: "../app/",
               jquery:"jquery",
-              underscore:"underscore"
+              underscore:"underscore",
+              bootstrap:"bootstrap",
+              helper:"helper"
           },
           shim: {
               backbone: {
@@ -65,7 +70,11 @@
               }
           }
         });
+        window.onload = function(){
+            NProgress.done();
+        };
         {% block extra_script %}{% endblock %}
+
     </script>
   </body>
 </html>

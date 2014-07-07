@@ -199,4 +199,6 @@ AUTHENTICATION_BACKENDS = [
 #https://django-tastypie.readthedocs.org/en/latest/settings.html
 API_LIMIT_PER_PAGE = 20
 TASTYPIE_FULL_DEBUG = True
-TASTYPIE_CANNED_ERROR = "connect wrong"
+TASTYPIE_CANNED_ERROR = "error"
+
+APPEND_SLASH=False

@@ -30,6 +30,7 @@ class QuestionResource(ModelResource):
         ordering = [
             "date_updated",
         ]
+        detail_allowed_methods = ['get', 'post', 'put', 'delete']
         authentication = BasicAuthentication()
 
     def get_object_list(self, request):
