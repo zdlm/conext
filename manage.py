@@ -7,3 +7,4 @@ if __name__ == "__main__":
     import conext.startup as startup
     startup.run()
     execute_from_command_line(sys.argv)
+    pass
