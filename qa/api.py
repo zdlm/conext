@@ -22,6 +22,7 @@ class AnswerResource(ModelResource):
 
 class QuestionResource(ModelResource):
     class Meta:
+        print("*****************************")
         queryset = QA.objects.all()
         resource_name = "question"
         filtering = {
@@ -30,7 +31,7 @@ class QuestionResource(ModelResource):
         ordering = [
             "date_updated",
         ]
-        detail_allowed_methods = ['get', 'post', 'put', 'delete']
+        allowed_methods = ['get', 'post', 'put', 'delete']
         authentication = BasicAuthentication()
 
     def get_object_list(self, request):

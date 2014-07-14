@@ -45,6 +45,14 @@ define(['jquery','jquery.autosize','helper','text!../../html/publish.html'],func
             helper.api({
                 url:this.url,
                 type:"post",
+                contentType: 'application/json',
+                processData: false,
+                data:JSON.stringify({
+                    "content": "This will prbbly be my lst post.",
+                    "pub_date": "2011-05-22T00:46:38",
+                    "slug": "another-post",
+                    "title": "Another test"
+                }),
                 done:function(){
                     alert("success");
                 }});
