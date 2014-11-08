@@ -138,9 +138,9 @@ INSTALLED_APPS = [
     "account",
     "eventlog",
     "metron",
-    
-    #rest api app
-    "tastypie",
+
+
+    "south",
 
     # project
     "conext",
